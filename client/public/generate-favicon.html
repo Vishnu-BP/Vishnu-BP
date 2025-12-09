@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .preview {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 1px solid #ddd;
+            display: block;
+            margin: 10px auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Favicon Generator</h1>
+    <div class="preview">
+        <h3>Preview:</h3>
+        <canvas id="faviconCanvas" width="32" height="32"></canvas>
+        <div style="text-align: center;">
+            <button onclick="downloadFavicon()">Download favicon.png</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('faviconCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Create gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+        gradient.addColorStop(0, '#3b82f6');    // Primary blue
+        gradient.addColorStop(0.5, '#8b5cf6');  // Secondary purple
+        gradient.addColorStop(1, '#06b6d4');    // Accent cyan
+        
+        // Draw rounded rectangle background
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        // Approximate rounded rectangle (works in all browsers)
+        ctx.moveTo(7, 0);
+        ctx.lineTo(25, 0);
+        ctx.quadraticCurveTo(32, 0, 32, 7);
+        ctx.lineTo(32, 25);
+        ctx.quadraticCurveTo(32, 32, 25, 32);
+        ctx.lineTo(7, 32);
+        ctx.quadraticCurveTo(0, 32, 0, 25);
+        ctx.lineTo(0, 7);
+        ctx.quadraticCurveTo(0, 0, 7, 0);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Draw bold "V" letter
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.98)';
+        ctx.lineWidth = 4;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        ctx.moveTo(9, 11);
+        ctx.lineTo(16, 22);
+        ctx.lineTo(23, 11);
+        ctx.stroke();
+        
+        // Draw accent dot
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(16, 24, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Download function
+        function downloadFavicon() {
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'favicon.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                alert('Favicon downloaded! Replace the existing favicon.png in the public folder.');
+            });
+        }
+    </script>
+</body>
+</html>
+

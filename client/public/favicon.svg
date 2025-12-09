@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient matching portfolio theme -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded background -->
+  <rect width="32" height="32" rx="7" fill="url(#grad)"/>
+  
+  <!-- Bold "V" letter - professional and readable -->
+  <path d="M 9 11 L 16 22 L 23 11" 
+        stroke="white" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"
+        opacity="0.98"/>
+  
+  <!-- Tech accent dot -->
+  <circle cx="16" cy="24" r="1.5" fill="rgba(255,255,255,0.8)"/>
+</svg>
