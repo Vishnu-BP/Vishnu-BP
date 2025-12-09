@@ -1,6 +1,6 @@
 # ⚡ Vishnu B P | Modern Developer Portfolio
 
-![Portfolio Banner](https://via.placeholder.com/1200x600.png?text=Modern+Developer+Portfolio+Preview)
+![Portfolio Banner](https://res.cloudinary.com/dt6y4dsml/image/upload/v1765260821/Gemini_Generated_Image_i19u82i19u82i19u_kj4i3a.png)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -8,7 +8,7 @@
 
 A high-performance, interactive portfolio website built with the **Next.js 15 App Router**. This project features advanced UI/UX patterns including **GPU-accelerated spotlight effects**, **infinite marquee scrolling**, and **glassmorphism** design elements.
 
-[**🔴 View Live Demo**](https://your-deployment-url.vercel.app)
+[**🔴 visit **](http://vishnu-bp.vercel.app)
 
 ---
 
@@ -48,9 +48,3 @@ A high-performance, interactive portfolio website built with the **Next.js 15 Ap
 - Node.js 18+
 - npm or yarn
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone [https://github.com/Vishnu-BP/portfolio-v2.git](https://github.com/Vishnu-BP/portfolio-v2.git)
-   cd client
